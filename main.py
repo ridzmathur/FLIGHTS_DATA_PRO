@@ -13,15 +13,15 @@ def log_results(total_records, dirty_records, top_city_stats, max_arrival_city, 
     print(f"City with MAX passengers departed: {max_departure_city}")
 
 def main():
-    # Step 1: Generate flight data
+    # Generate flight data (data_generator.py)
     print("Generating flight data...")
     generate_flight_data()
 
-    # Step 2: Load and process data
+    # Load and process data (data_loader.py and data_processor.py)
     df = load_all_data()
     total_records, dirty_records, top_city_stats, max_arrival_city, max_departure_city = process_data(df)
 
-    # Step 3: Log results
+    # Log results (print results)
     log_results(total_records, dirty_records, top_city_stats, max_arrival_city, max_departure_city)
 
 if __name__ == "__main__":
